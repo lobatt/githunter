@@ -1,0 +1,13 @@
+{
+  "name": "githunter",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "github-api": "github#^0.11.2",
+    "jquery": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.2",
+    "mocha": "^2.4.2"
+  }
+}
