@@ -11,7 +11,7 @@
     <!-- endbuild -->
   </head>
   <body>
-    <h1>GitHunter</h1>
+    <h3>GitHunter</h3>
 
     <!-- build:js scripts/popup-vendor.js -->
     <!-- bower:js -->
@@ -21,8 +21,14 @@
     <!-- build:js scripts/popup.js -->
     <script src="scripts/bundle/popup.js"></script>
     <!-- endbuild -->
-    <label for="location">Location: </label>
-    <input type="text" value="New York" placeholder="New York" id="location"/>
+    <div>
+      <a href="#" id="open-option">Options </a>
+    </div>
+
+    <div>
+      <label for="location">Location: </label>
+      <input type="text" value="New York" placeholder="Location" id="location"/>
+    </div>
     <input type="submit" name="button" value="Search!" id="button"/>
     <div id="result">
         

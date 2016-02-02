@@ -10,7 +10,7 @@
     <!-- endbuild -->
   </head>
   <body>
-    <h1>'Allo, 'Allo!</h1>
+    <h1>Githunter Options</h1>
 
     <!-- build:js scripts/options-vendor.js -->
     <!-- bower:js -->
@@ -18,9 +18,10 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/options.js -->
-    <script src="scripts/options.js"></script>
     <!-- endbuild -->
-    <lable>Location: <input type="text" name="location" value="New York" id="input-location" placeholder="New York"></lable>
-    <label>Hireable only?<input type="checkbox" name="hireable" id="input-hireable" value="hireable"></label>
+    <lable>GitHub Token: <input type="text" name="token" value="" id="input-token" placeholder="Your GitHub Access Token"></lable>
+    <div id="status"></div>
+    <button id="save">Save</button>
+    <script src="scripts/options.js"></script>
   </body>
 </html>
