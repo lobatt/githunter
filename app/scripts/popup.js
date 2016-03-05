@@ -123,7 +123,7 @@ function exportCsv() {
     function (err, output) {
         var a = document.createElement('a');
         console.log(output);
-        a.href = 'data:attachment/csv,' + output;
+        a.href = 'data:text/csv;charset=utf-8,' + escape(output);
         a.target = '_blank';
         a.download = 'data.csv';
         document.body.appendChild(a);
