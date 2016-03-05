@@ -113,6 +113,7 @@ function addToCsvContent(item) {
     console.log(csvContent);
 }
 
+//TODO: figure out why the newline had been eaten?
 function exportCsv() {
     stringify(csvContent, 
         { 
