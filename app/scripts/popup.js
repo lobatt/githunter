@@ -14,6 +14,7 @@ $(document).ready(function () {
 
     $("#button").click(function () {
         clearResult();
+        clearError();
         getLoginFromCurrentUrl(getOrgMembers);
     });
 
@@ -34,6 +35,10 @@ $(document).ready(function () {
 function clearResult() {
     $('#result').empty();
     csvContent = [];
+}
+
+function clearError() {
+    $('#errMsg').empty();
 }
 
 function displayError(err, res) {
@@ -65,7 +70,8 @@ function getOrgMembers(page, nItems, orgName) {
     client.org(orgName).members(page, nItems, function handleRes(err, res) {
         getUserInfo(err, res);
         if (res && res.length === nItems) {
-            client.org(orgName).members(page + 1, nItems, handleRes);
+            page = page + 1;
+            client.org(orgName).members(page, nItems, handleRes);
         }
     });
 }
@@ -73,7 +79,7 @@ function getOrgMembers(page, nItems, orgName) {
 function getUserInfo(err, res) {
     var userLogins = [];
     if (err) {
-        displayError(err, res);
+        //displayError(err, res);
         return;
     }
     for (var i = res.length - 1; i >= 0; i--) {
