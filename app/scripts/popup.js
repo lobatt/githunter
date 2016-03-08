@@ -98,7 +98,7 @@ function getSingleUser(login) {
 }
 
 function fuzzysearch(str, target) {
-    if (str == null) return true;
+    //if (str == null) return true;
     if (target == null) return true;
     return str.toLowerCase().search(target.toLowerCase()) != -1;
 }
@@ -108,6 +108,10 @@ function getLoginFromCurrentUrl() {
     chrome.tabs.getSelected(null, function (tab) {
         console.log("Url:" + tab.url);
         url = tab.url;
+        if (url.indexOf("github.com") < 0) {
+            displayError("Error: Not a github page","");
+            return
+        }
         var parts = url.split("/");
         getOrgMembers(1, ITEMS_PER_PAGE, parts[3]);
         getSingleUser(parts[3]);
