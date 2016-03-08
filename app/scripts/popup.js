@@ -98,8 +98,10 @@ function getSingleUser(login) {
 }
 
 function fuzzysearch(str, target) {
-    //if (str == null) return true;
-    if (target == null) return true;
+    if (str == null) {
+        if (target && taret.length > 0) return false;
+        else return true;
+    }
     return str.toLowerCase().search(target.toLowerCase()) != -1;
 }
 
