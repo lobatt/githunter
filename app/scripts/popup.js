@@ -8,8 +8,8 @@ var ITEMS_PER_PAGE = 30; //items per page
 var csvContent = [];
 
 $(document).ready(function () {
-    if (token.length === 0) {
-        displayError("Empty github token, configure that in option", "");
+    if (!token || token.length === 0) {
+        displayError("Empty github token, configure that in Options", "");
     }
 
     $("#button").click(function () {
